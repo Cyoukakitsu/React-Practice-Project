@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-
 import { useState } from "react";
 
 function Button({ text, color, size, onClick, disabled }) {
@@ -43,22 +41,22 @@ function BasicProps() {
             <Button
               text="Primary Button"
               color="primary"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Secondary Button"
               color="secondary"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Danger Button"
               color="danger"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Success Button"
               color="success"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
           </div>
         </div>
@@ -72,18 +70,18 @@ function BasicProps() {
               text="Small"
               color="primary"
               size="small"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Medium (Default)"
               color="primary"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Large"
               color="primary"
               size="large"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
           </div>
         </div>
@@ -96,13 +94,13 @@ function BasicProps() {
             <Button
               text="Enabled Button"
               color="primary"
-              onClick={() => setClickCount(clickCount + 1)}
+              onClick={() => setClickCount((c) => c + 1)}
             />
             <Button
               text="Disabled Button"
               color="primary"
               disabled={true}
-              onClick={() => alert("This should not fire")}
+              // onClick={() => alert("This should not fire")}
             />
           </div>
         </div>
