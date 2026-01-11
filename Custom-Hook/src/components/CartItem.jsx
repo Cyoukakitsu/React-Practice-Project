@@ -1,4 +1,4 @@
-import { Fatrash, FaMinus, FaPlus, FaTrash } from "react-icons/fa";
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 function CartItem({ item, onUpdateQuantity, onRemove }) {
   return (
     <div className="cart-item">

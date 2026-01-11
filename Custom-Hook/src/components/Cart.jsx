@@ -9,7 +9,12 @@ function Cart({ cart, onUpdateQuantity, onRemove, total }) {
     <div className="cart">
       <h2>Shopping cart</h2>
       {cart.map((item) => (
-        <CartItem key={item.id} />
+        <CartItem
+          key={item.id}
+          item={item}
+          onUpdateQuantity={onUpdateQuantity}
+          onRemove={onRemove}
+        />
       ))}
       <div className="cart-total">
         <h3>Total:${typeof total === "string" ? total : total.toFixed(2)}</h3>

@@ -1,4 +1,4 @@
-import { FashoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 function ProductCard({ prodcut, onAddToCart }) {
   return (
@@ -6,7 +6,7 @@ function ProductCard({ prodcut, onAddToCart }) {
       <h3>{prodcut.name}</h3>
       <p className="price">${prodcut.price}</p>
       <button onClick={() => onAddToCart(prodcut)}>
-        <FashoppingCart />
+        <FaShoppingCart />
         Add to Cart
       </button>
     </div>
