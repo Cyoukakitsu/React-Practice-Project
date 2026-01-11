@@ -1,11 +1,21 @@
 import { useState } from "react";
 import { FaUserPlus } from "react-icons/fa";
-// import { useState } from 'react';
-function QueueForm({ onAdd }) {
-  const [name, setName] = useState("");
-  const [service, setService] = useState("");
+import type { Customer } from "../types/types";
 
-  const handleSubmit = (e) => {
+type NewCustomer = {
+  name: string;
+  service: string;
+};
+
+type QueueFormProps = {
+  onAdd: (customer: Omit<Customer, "id" | "status">) => void;
+};
+
+function QueueForm({ onAdd }: QueueFormProps) {
+  const [name, setName] = useState<string>("");
+  const [service, setService] = useState<string>("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name.trim() || !service.trim()) return;
     onAdd({ name, service });

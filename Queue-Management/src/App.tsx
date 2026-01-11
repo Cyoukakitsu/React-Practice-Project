@@ -1,18 +1,19 @@
 import { useState } from "react";
 import QueueForm from "./components/QueueForm";
 import QueueDisplay from "./components/QueueDisplay";
+import type { Customer, Status } from "./types/types";
 import "./App.css";
 
 function App() {
-  const [queue, setQueue] = useState([]);
+  const [queue, setQueue] = useState<Customer[]>([]);
 
-  const addToQueue = (customer) => {
+  const addToQueue = (customer: Omit<Customer, "id" | "status">) => {
     //React 更新数组的标准写法 例如：setQueue([...queue, newItem]);
     //...queue → 把旧数据原样复制  newItem → 往数组末尾加一个新元素
     setQueue([...queue, { ...customer, id: Date.now(), status: "waiting" }]);
   };
 
-  const updateStatus = (id, newStatus) => {
+  const updateStatus = (id: number, newStatus: Status) => {
     setQueue(
       queue.map((customer) =>
         customer.id === id ? { ...customer, status: newStatus } : customer
@@ -20,7 +21,7 @@ function App() {
     );
   };
 
-  const removeFromQueue = (id) => {
+  const removeFromQueue = (id: number) => {
     setQueue(queue.filter((customer) => customer.id !== id));
   };
 

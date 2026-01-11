@@ -1,6 +1,12 @@
-// import { useState } from 'react';
-function QueueDisplay({ queue, onUpdateStatus, onRemove }) {
-  const getStatueColor = (status) => {
+import type { Customer, Status } from "../types/types";
+
+type QueueDisplayProps = {
+  queue: Customer[];
+  onUpdateStatus: (id: number, newStatus: Status) => void;
+  onRemove: (id: number) => void;
+};
+function QueueDisplay({ queue, onUpdateStatus, onRemove }: QueueDisplayProps) {
+  const getStatueColor = (status: Status): string => {
     switch (status) {
       case "waiting":
         return "var(--waiting)";
@@ -44,7 +50,7 @@ function QueueDisplay({ queue, onUpdateStatus, onRemove }) {
                 {customer.status === "serving" && (
                   <button
                     className="complete-btn"
-                    onClick={() => onUpdateStatus(customer.id, "complete")}
+                    onClick={() => onUpdateStatus(customer.id, "completed")}
                   >
                     Serve
                   </button>
