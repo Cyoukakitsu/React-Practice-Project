@@ -6,6 +6,19 @@ function Navbar() {
   const logout = useAppStore((state) => state.logout);
   const toggleTheme = useAppStore((state) => state.toggleTheme);
 
-  return <></>;
+  return (
+    <nav>
+      <span>Theme:{theme}</span>
+      <button onClick={toggleTheme}>ToggleTheme</button>
+      {user ? (
+        <>
+          <span>Hi,{user.name}</span>
+          <button onClick={logout}>Logout</button>
+        </>
+      ) : (
+        <span>Guest</span>
+      )}
+    </nav>
+  );
 }
 export default Navbar;
