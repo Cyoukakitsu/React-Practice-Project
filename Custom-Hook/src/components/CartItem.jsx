@@ -1,5 +1,5 @@
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
-function CartItem({ item, onUpdateQuantity, onRemove }) {
+export function CartItem({ item, onUpdateQuantity, onRemove }) {
   return (
     <div className="cart-item">
       <div className="item-details">
@@ -21,5 +21,3 @@ function CartItem({ item, onUpdateQuantity, onRemove }) {
     </div>
   );
 }
-
-export default CartItem;

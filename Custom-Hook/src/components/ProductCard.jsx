@@ -1,11 +1,11 @@
 import { FaShoppingCart } from "react-icons/fa";
 
-function ProductCard({ prodcut, onAddToCart }) {
+function ProductCard({ product, onAddToCart }) {
   return (
     <div className="product-card">
-      <h3>{prodcut.name}</h3>
-      <p className="price">${prodcut.price}</p>
-      <button onClick={() => onAddToCart(prodcut)}>
+      <h3>{product.name}</h3>
+      <p className="price">${product.price}</p>
+      <button onClick={() => onAddToCart(product)}>
         <FaShoppingCart />
         Add to Cart
       </button>

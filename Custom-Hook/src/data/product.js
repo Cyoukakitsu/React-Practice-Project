@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     id: 1,
     name: "Wireless Earbuds Pro",
@@ -20,3 +20,4 @@ export const products = [
     price: 29.99,
   },
 ];
+export default products;
