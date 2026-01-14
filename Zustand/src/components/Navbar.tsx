@@ -1,10 +1,12 @@
 import { useAppStore } from "../store/appStore";
 
 function Navbar() {
-  const user = useAppStore((state) => state.user);
-  const theme = useAppStore((state) => state.theme);
-  const logout = useAppStore((state) => state.logout);
-  const toggleTheme = useAppStore((state) => state.toggleTheme);
+  const { user, theme, logout, toggleTheme } = useAppStore((state: any) => ({
+    user: state.user,
+    theme: state.theme,
+    logout: state.logout,
+    toggleTheme: state.toggleTheme,
+  }));
 
   return (
     <nav>

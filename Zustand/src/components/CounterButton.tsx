@@ -1,8 +1,8 @@
 import { useCounterStore } from "../store/counterStore";
 
 function CounterButton() {
-  const increase = useCounterStore((state) => state.increase);
-  const decrease = useCounterStore((state) => state.decrease);
+  const increase = useCounterStore((state: any) => state.increase);
+  const decrease = useCounterStore((state: any) => state.decrease);
 
   return (
     <>

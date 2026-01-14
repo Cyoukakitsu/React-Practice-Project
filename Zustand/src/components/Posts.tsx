@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 
-import { useCounterStore } from "../store/postStore";
+import { usePostsStore } from "../store/postStore";
 
 function Posts() {
-  const { post, loading, error, fetchPosts } = useCounterStore();
+  const { post, loading, error, fetchPosts } = usePostsStore((state: any) => ({
+    post: state.post,
+    loading: state.loading,
+    error: state.error,
+    fetchPosts: state.fetchPosts,
+  }));
+
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
@@ -12,7 +18,7 @@ function Posts() {
   if (error) return <p>{error}</p>;
   return (
     <ul>
-      {post.map((p) => (
+      {post.map((p: any) => (
         <li key={p.id}>{p.title}</li>
       ))}
     </ul>

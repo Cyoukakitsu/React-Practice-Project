@@ -1,7 +1,12 @@
 import { useCounterStore } from "../store/counterStore";
 
 function Counter() {
-  const { count, increase, decrease, reset } = useCounterStore();
+  const { count, increase, decrease, reset } = useCounterStore((state) => ({
+    count: state.count,
+    increase: state.increase,
+    decrease: state.decrease,
+    reset: state.reset,
+  }));
 
   return (
     <div>
